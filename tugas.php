@@ -4,7 +4,6 @@ function safe($v) {
     return htmlspecialchars(trim($v ?? ""), ENT_QUOTES, 'UTF-8');
 }
 
-// ============== PROSES FORM BIODATA (POST) ==================
 $nama = $nim = $prodi = $jk = $alamat = "";
 $hobi_str = " - ";
 $show_result = false;
@@ -26,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-// ============== PROSES FORM PENCARIAN (GET) ==================
 $pesan_cari = "";
 if (isset($_GET['keyword']) && trim($_GET['keyword']) !== "") {
     $keyword = safe($_GET['keyword']);
@@ -49,12 +47,14 @@ if (isset($_GET['keyword']) && trim($_GET['keyword']) !== "") {
             /* Center layout */
             display:flex;
             flex-direction:column;
-            align-items:center;      /* center horizontal */
-            justify-content:flex-start; /* kalau mau pas di tengah layar ubah ke center */
+            align-items:center;      
+            justify-content:flex-start;
             min-height:100vh;
         }
 
-        h2 { color:#333; }
+        h2 { 
+            color:#333; 
+        }
 
         form, table, .result-box {
             margin-bottom:20px; 
@@ -63,11 +63,13 @@ if (isset($_GET['keyword']) && trim($_GET['keyword']) !== "") {
             border-radius:8px; 
             background:#fff; 
             max-width:600px; 
-            width:100%;                 /* biar responsif */
+            width:100%;                 
             box-shadow:0 2px 5px rgba(0,0,0,0.1);
         }
 
-        label { font-weight:bold; }
+        label { 
+            font-weight:bold; 
+        }
 
         input[type=text], select, textarea {
             width:95%; padding:8px; margin-top:5px;
@@ -78,11 +80,23 @@ if (isset($_GET['keyword']) && trim($_GET['keyword']) !== "") {
             background:#4CAF50; color:white; border:none;
             padding:10px 15px; border-radius:5px; cursor:pointer;
         }
-        button:hover { background:#45a049; }
+        button:hover { 
+            background:#45a049; 
+        }
 
-        table { border-collapse: collapse; width:100%; margin-top:20px; }
-        table, th, td { border:1px solid #444; padding:8px; }
-        th { background:#4CAF50; color:white; text-align:left; }
+        table { 
+            border-collapse: collapse; 
+            width:100%; 
+            margin-top:20px; 
+        }
+        table, th, td { 
+            border:1px solid #444; 
+            padding:8px; 
+        }
+        th { background:#4CAF50; 
+            color:white; 
+            text-align:left; 
+           }
 
         .result-box {
             margin-top:20px; padding:15px;
@@ -149,3 +163,4 @@ if (isset($_GET['keyword']) && trim($_GET['keyword']) !== "") {
     <?php endif; ?>
 </body>
 </html>
+
